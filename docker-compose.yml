@@ -17,9 +17,10 @@ services:
       DATABASE_PASSWORD: my_password
       DATABASE_SSL: "false"
     ports: 
-      - 8080:1337
+      - 8080:80
     volumes:
-      - C:/srv/strapi:/usr/src/api/strapi-app
+      - ./backend:/usr/src/api/strapi-app
+
 
   db:
     image: mariadb:latest
@@ -30,3 +31,5 @@ services:
       MYSQL_DATABASE: db_strapi
       MYSQL_USER: my_user
       MYSQL_PASSWORD: my_password
+    ports:
+      - 3306:3306
