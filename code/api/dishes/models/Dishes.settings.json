@@ -1,0 +1,49 @@
+{
+  "connection": "default",
+  "collectionName": "dishes",
+  "info": {
+    "name": "dishes",
+    "description": "Dishes from restaurant"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "category": {
+      "model": "categories",
+      "via": "dishes"
+    },
+    "type": {
+      "enum": [
+        "vegetarian",
+        "non_vegetarian"
+      ],
+      "type": "enumeration"
+    }
+  }
+}
