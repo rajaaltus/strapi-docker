@@ -17,9 +17,9 @@ services:
       DATABASE_PASSWORD: my_password
       DATABASE_SSL: "false"
     ports: 
-      - 8080:80
+      - 8081:80
     volumes:
-      - ./backend:/usr/src/api/strapi-app
+      - ./code:/srv/app
 
 
   db:
@@ -32,4 +32,4 @@ services:
       MYSQL_USER: my_user
       MYSQL_PASSWORD: my_password
     ports:
-      - 3306:3306
+      - 3307:3306
